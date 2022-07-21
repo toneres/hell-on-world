@@ -112,6 +112,39 @@
     ```
 
 2.  Lalu bisa diupload dengan menggunakan perintah di bawah ini:
+
     ```
     git push origin master
     ```
+
+    _Catatan: tergantung oleh pengaturan komputer anda, mungkin anda akan diarahkan ke credential manager github untuk melakukan otentikasi login dengan akun github_
+
+    Jika push commit berhasil, maka akan muncul output seperti berikut:
+
+    ```
+    Enumerating objects: 3, done.
+    Counting objects: 100% (3/3), done.
+    Delta compression using up to 8 threads
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 1.57 KiB | 1.57 MiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+    To https://github.com/toneres/hell-on-world.git
+    * [new branch]      master -> master
+    ```
+
+## 3. (Opsional) Melakukan push dengan Personal Access Token (PAT) tanpa memasukkan username dan password
+
+1.  Dapatkan PAT melalui link https://github.com/settings/tokens, lalu tekan tombol _Generate new token_. Token yang telah anda dapatkan akan kurang lebih berbentuk seperti ini:
+    ```
+    aaaabbbCCCdddAAAAvvvxxxxyyyyzzzz33333333
+    ```
+2.  Ubah alamat lokasi remote origin dengan command ini:
+    ```
+    git remote set-url origin https://tokenPATpanjangmudisini@github.com/username-githubmu/nama-projectmu.git
+    ```
+    Contoh dengan menggunakan repositori ini:
+    ```
+    git remote set-url origin https://aaaabbbCCCdddAAAAvvvxxxxyyyyzzzz33333333@github.com/toneres/hell-on-world.git
+    ```
+3.  Lakukan push seperti biasa, anda tidak akan diminta username dan password.  
+    **_Catatan: JANGAN MENYEBAR PERSONAL ACCESS TOKEN SEMBARANGAN, ORANG LAIN DAPAT MENGONTROL AKUN GITHUB ANDA JIKA MEMILIKI TOKEN TERSEBUT_**
